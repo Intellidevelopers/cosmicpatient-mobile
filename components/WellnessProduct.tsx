@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         gap: 10,
         padding: 16,
-        marginBottom: 50,
-        top: -20
+        marginBottom: 55,
+        top: -5
 
     },
 })

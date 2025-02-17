@@ -45,4 +45,6 @@ export type RootStackParamList = {
     SearchScreen: undefined; // Define all your screen names and their parameters
     Specialists: undefined; // Define all your screen names and their parameters
     Products: undefined; // Define all your screen names and their parameters
+    DoctorList: undefined; // Define all your screen names and their parameters
+    DoctorProfile: undefined; // Define all your screen names and their parameters
   };

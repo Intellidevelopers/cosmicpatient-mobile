@@ -8,9 +8,11 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import Header from '../components/HeadersComponent/Header';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../components/navigation'; // Adjust the path if needed
 
 const specialistsData = [
     { id: '1', name: 'General Medicine', image: require('../assets/med.png') },
@@ -31,7 +33,8 @@ const specialistsData = [
 ];
 
 const Specialists = () => {
-    const navigation = useNavigation();
+const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>>();
+
     const [searchText, setSearchText] = useState('');
 
     // Filter specialists based on search input
@@ -60,7 +63,7 @@ const Specialists = () => {
                 data={filteredSpecialists}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => (
-                    <TouchableOpacity style={styles.listItem}>
+                    <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('DoctorList')}>
                         <Image source={item.image} style={styles.icon} />
                         <Text style={styles.listItemText}>{item.name}</Text>
                     </TouchableOpacity>

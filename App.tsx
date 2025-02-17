@@ -21,13 +21,15 @@ import ProductDetails from './screens/ProductDetails';
 import SearchScreen from './screens/SearchScreen';
 import Specialists from './screens/Specialists';
 import Products from './screens/Products';
+import DoctorList from './screens/DoctorList';
+import DoctorProfile from './screens/DoctorProfile';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeTab">
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen name="Splash" component={SplaschScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />
         <Stack.Screen name="GetStarted" component={GetStarted} options={{ headerShown: false }} />
@@ -45,6 +47,8 @@ export default function App() {
         <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Specialists" component={Specialists} options={{ headerShown: false }} />
         <Stack.Screen name="Products" component={Products} options={{ headerShown: false }} />
+        <Stack.Screen name="DoctorList" component={DoctorList} options={{ headerShown: false }} />
+        <Stack.Screen name="DoctorProfile" component={DoctorProfile} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
